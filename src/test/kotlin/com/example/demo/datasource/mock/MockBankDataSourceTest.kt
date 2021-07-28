@@ -1,7 +1,5 @@
 package com.example.demo.datasource.mock
 
-import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
 
@@ -19,7 +17,7 @@ internal class MockBankDataSourceTest {
         val banks = mockDataSource.retrieveBanks()
 
         // then
-        Assertions.assertThat(banks).isNotEmpty
+        assertThat(banks).isNotEmpty
     }
     
     @Test
@@ -28,7 +26,7 @@ internal class MockBankDataSourceTest {
         
         
         // when
-        val banks = mockDataSource.getBanks()
+        val banks = mockDataSource.retrieveBanks()
         
         // then
         assertThat(banks).allMatch{it.accountNumber.isNotBlank()}
